@@ -18,10 +18,9 @@ public class ObjectPool: MonoBehaviour {
 	}
 	void Awake() {
 		instance = this;
+		ground = GameObject.FindGameObjectWithTag( "Ground" );
 	}
 	void Start() {
-		ground = GameObject.FindGameObjectWithTag( "Ground" );
-
 		var randomNumber = Random.Range( 1, maxNPCNumber );
 		for(int i = 0; i < randomNumber; i++) {
 			var obj = Instantiate( npcPrefab, generateRandomPosition(), Quaternion.identity );
